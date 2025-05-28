@@ -3,7 +3,7 @@
 A modern, responsive healthcare dashboard built with, React, and static CSS. This project demonstrates a clean, professional interface for managing patient data, appointments, and health metrics.
 
 ![Healthcare Dashboard Preview](https://healthcare-dashboard-eta-gilt.vercel.app/)
-
+https://healthcare-dashboard-eta-gilt.vercel.app/
 ##  Preview
 
 The dashboard features a clean, minimalist design with:
