@@ -1,0 +1,455 @@
+
+.anatomy-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+  min-height: 420px; 
+  max-width: 350px;
+  position: relative;
+}
+
+.human-container {
+  position: relative;
+  width: 100%;
+  height: 455px; 
+  background-color: var(--background-light);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.body-model-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fb;
+  border-radius: 8px;
+}
+
+.static-anatomy-image {
+  height: 90%;
+  max-width: 100%;
+  object-fit: cover;
+}
+
+.health-summary {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: var(--background-light);
+  border-radius: 8px;
+}
+
+.health-title {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+
+.health-status-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.health-status-item {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.status-dot.green {
+  background-color: #4cd964;
+}
+
+.status-dot.yellow {
+  background-color: #ffcc00;
+}
+
+.status-dot.red {
+  background-color: #ff3b30;
+}
+
+.status-text {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.control-button {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.control-button:hover {
+  background-color: #4a57b9;
+}
+
+.static-health-indicators {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.static-indicator {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.indicator-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.indicator-dot.green {
+  background-color: #4cd964;
+}
+
+.indicator-dot.yellow {
+  background-color: #ffcc00;
+}
+
+.indicator-dot.red {
+  background-color: #ff3b30;
+}
+
+.static-indicator:hover .indicator-dot {
+  transform: scale(1.2);
+}
+
+.indicator-tooltip {
+  position: absolute;
+  top: -5px;
+  left: 20px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 8px 12px;
+  min-width: 120px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.2s ease-out;
+  z-index: 30;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.indicator-name {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 2px;
+  color: #333;
+}
+
+.indicator-status {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.indicator-status.green {
+  color: #4cd964;
+}
+
+.indicator-status.yellow {
+  color: #ffcc00;
+}
+
+.indicator-status.red {
+  color: #ff3b30;
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.heart-indicator .indicator-dot {
+  background-color: #ff5757;
+}
+
+.bone-indicator .indicator-dot {
+  background-color: #62e0a3;
+}
+
+.teeth-indicator .indicator-dot {
+  background-color: #5b6acf;
+}
+
+.indicator-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+}
+
+.anatomy-image-container {
+  position: relative;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-icon-overlay {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
+}
+
+.magnify-icon {
+  font-size: 16px;
+}
+
+.anatomy-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.body-image {
+  height: 100%;
+  object-fit: contain;
+}
+
+.health-indicator {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.health-indicator.green {
+  background-color: var(--secondary-color);
+}
+
+.health-indicator.red {
+  background-color: var(--warning-color);
+}
+
+.status-bubble {
+  position: absolute;
+  top: -40px;
+  left: -60px;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  z-index: 20;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.3s ease;
+}
+
+.health-indicator.red .status-bubble {
+  background-color: var(--warning-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.icon-heart,
+.icon-teeth,
+.icon-bone {
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-text {
+  letter-spacing: 0.5px;
+}
+
+.rotation-controls {
+  width: 80%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.rotation-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.slider-control {
+  width: 100%;
+}
+
+.body-slider {
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  background-color: var(--border-color);
+  border-radius: 2px;
+  outline: none;
+}
+
+.body-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.body-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+/* Healthy Log Button */
+.healthy-log-button {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.healthy-log-button:hover {
+  background-color: #4fc58d;
+}
+
+.log-icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.log-icon {
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 992px) {
+  .anatomy-section {
+    max-width: 100%;
+  }
+
+  .anatomy-image-container {
+    width: 80%;
+    max-height: 400px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .anatomy-image-container {
+    width: 100%;
+    max-height: 350px;
+  }
+
+  .slider-control {
+    width: 80%;
+  }
+}

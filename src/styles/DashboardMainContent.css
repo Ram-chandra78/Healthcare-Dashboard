@@ -1,0 +1,152 @@
+
+.dashboard-main-content {
+  padding: 30px;
+  background-color: var(--bg-light);
+  min-height: calc(100vh - var(--header-height));
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius-sm);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.filter-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.dropdown-arrow {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-left: 5px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 25px;
+}
+
+.grid-section {
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  overflow: hidden;
+}
+
+.anatomy-container {
+  display: flex;
+  grid-column: 1;
+  
+}
+
+.calendar-container {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.schedule-container {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.activity-container {
+  grid-column: 1;
+ 
+}
+
+
+@media screen and (max-width: 1200px) {
+  .dashboard-grid {
+    gap: 20px;
+  }
+
+  .grid-section {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .dashboard-main-content {
+    padding: 20px;
+  }
+
+  .dashboard-header {
+    margin-bottom: 20px;
+  }
+
+  .dashboard-title {
+    font-size: 24px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .anatomy-container,
+  .calendar-container,
+  .schedule-container,
+  .activity-container {
+    grid-column: 1;
+  }
+
+  .anatomy-container {
+    grid-row: 1;
+  }
+
+  .calendar-container {
+    grid-row: 2;
+  }
+
+  .schedule-container {
+    grid-row: 3;
+  }
+
+  .activity-container {
+    grid-row: 4;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dashboard-main-content {
+    padding: 15px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .grid-section {
+    padding: 15px 10px;
+  }
+}
+.grid-section.activity-container {
+  align-self: start; 
+  height: auto;
+  max-height: fit-content;
+}

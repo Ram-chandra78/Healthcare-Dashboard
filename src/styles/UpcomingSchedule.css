@@ -1,0 +1,72 @@
+
+.upcoming-schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.schedule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.schedule-day {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.day-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.day-appointments {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+@media screen and (max-width: 992px) {
+  .section-title {
+    font-size: 16px;
+  }
+  
+  .day-title {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .upcoming-schedule {
+    gap: 15px;
+  }
+  
+  .schedule-list {
+    gap: 15px;
+  }
+  
+  .schedule-day {
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section-title {
+    font-size: 15px;
+  }
+  
+  .day-title {
+    font-size: 13px;
+  }
+}
